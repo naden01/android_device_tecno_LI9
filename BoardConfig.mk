@@ -112,7 +112,7 @@ TARGET_RECOVERY_FSTAB           := $(DEVICE_PATH)/recovery/root/system/etc/recov
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Treble
-BOARD_VNDK_VERSION := current
+#BOARD_VNDK_VERSION := current
 
 # Crypto
 #TW_INCLUDE_CRYPTO               := true
