@@ -32,6 +32,8 @@ tr_product			/tr_product		ext4		ro																	wait,slotselect,logical,nofai
 tr_product			/tr_product		erofs		ro																	wait,slotselect,logical,nofail
 tr_preload			/tr_preload		ext4		ro																	wait,slotselect,logical,nofail
 tr_preload			/tr_preload		erofs		ro																	wait,slotselect,logical,nofail
+tr_overlayfs 		/tr_overlayfs	ext4        ro  																wait,slotselect,logical,nofail
+tr_overlayfs 		/tr_overlayfs	erofs       ro  																wait,slotselect,logical,nofail
 
 # Userdata partition
 /dev/block/by-name/metadata	/metadata		ext4		noatime,nosuid,nodev,discard														                           wait,check,formattable
