@@ -9,6 +9,8 @@
 /dev/block/sda                                   0660    root    system
 /dev/block/sdb                                   0660    root    system
 /dev/block/sdc                                   0660    root    system
+/dev/ufs_cdev                                    0660    root    system
+
 
 # eMMC/UFS common
 /dev/block/by-name/misc2     0660    root    system
@@ -24,6 +26,9 @@
 /dev/block/by-name/md1img    0640    root    system
 /dev/block/by-name/md1img_a  0640    root    system
 /dev/block/by-name/md1img_b  0640    root    system
+/dev/block/by-name/modem     0640    root    system
+/dev/block/by-name/modem_a   0640    root    system
+/dev/block/by-name/modem_b   0640    root    system
 /dev/block/by-name/md1dsp    0660    root    system
 /dev/block/by-name/boot_para 0640    root    system
 
@@ -58,8 +63,7 @@
 /dev/fw_log_wifi          0660   wifi     wifi
 
 # FMRadio
-# NFBD:modify  for dev/fm 0660->0666 NFRFP-5229 by xiaoyan.shi 20211125
-/dev/fm                   0666   media     media
+/dev/fm                   0660   media     media
 
 # NFC
 /dev/msr3110              0666   root       root
@@ -95,6 +99,9 @@
 
 # DRM node
 /dev/dri/card0            0660   system     system
+
+#sensor
+/dev/hf_manager        0660    system    system
 
 # add the read write right of ttyUSB*
 /dev/bus/usb/*     	  0660   root       usb
@@ -149,7 +156,7 @@
 /dev/ttyRB*               0660   radio      radio
 
 # Mali node
-/dev/mali                 0666   system     graphics
+/dev/mali*                0666   system     graphics
 
 # Change ION driver permission
 /dev/ion                  0666   system     graphics
@@ -180,12 +187,18 @@
 /dev/hotknot              0660   root       system
 /dev/tll                  0660   root       system
 
+#USD: add group R/W permission for dev nodes of hang detect by yang.fu5 20250514 start
 #hang_detect
-/dev/RT_Monitor           0600   system     system
+/dev/RT_Monitor           0660   system     system
 /dev/kick_powerkey        0600   system     system
+#USD: add group R/W permission for dev nodes of hang detect by yang.fu5 20250514 end
 
 #MTK In-House TEE
 /dev/ttyACM0              0660   radio      radio
+
+
+#widevine driver node
+/dev/drm_wv               0660   media      system
 
 #BSP: add ultrasound support CILHLJYQ-4 by yu.xiang5 20211221 start
 #elliptic sensor
